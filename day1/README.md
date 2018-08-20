@@ -29,4 +29,4 @@ then use serverless template to create a service which has some biolerplate code
 `serverless deploy -v`
 
 It will create sample welcome serverless function in AWS.
-![serverless-framework](serverless-framework.jpg)
+![serverless-framework](serverless-framework.JPG)
