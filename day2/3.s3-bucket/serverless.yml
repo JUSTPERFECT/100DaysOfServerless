@@ -1,0 +1,17 @@
+service: s3-bucket
+provider:
+  name: aws
+  runtime: nodejs6.10
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello-s3
+          method: get
+resources:
+  Resources:
+    S3bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: 100daysofserverless
