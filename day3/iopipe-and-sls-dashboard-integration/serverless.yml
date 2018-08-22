@@ -1,0 +1,19 @@
+service: iopipe-and-sls-dashboard-integration
+app: dashboard
+tenant: justperfect
+provider:
+  name: aws
+  runtime: nodejs6.10
+environment:
+    IOPIPE_TOKEN: ${env:IOPIPE_TOKEN}
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
+plugins:
+  - serverless-plugin-iopipe
+custom:
+  iopipeNoVerify: true
